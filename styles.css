@@ -86,3 +86,21 @@ h1 {
   50% { opacity: 0.3; }
   100% { opacity: 0.8; }
 }
+
+#retryBtn {
+    display: none;
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    color: #d63384;
+    display: none;
+}
