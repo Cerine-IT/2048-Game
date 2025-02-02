@@ -71,22 +71,6 @@ h1 {
   background-color: #bb2376;
 }
 
-.star {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background: #e3d0ff;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: twinkle 3s infinite;
-}
-
-@keyframes twinkle {
-  0% { opacity: 0.8; }
-  50% { opacity: 0.3; }
-  100% { opacity: 0.8; }
-}
-
 #retryBtn {
     display: none;
 }
@@ -104,3 +88,20 @@ h1 {
     color: #d63384;
     display: none;
 }
+
+.star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #e3d0ff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.8; }
+}
+
