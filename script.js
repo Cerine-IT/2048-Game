@@ -39,4 +39,3 @@ window.onload = function() {
   createStars();
   createGrid();
 };
-
