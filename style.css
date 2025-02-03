@@ -17,7 +17,7 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    display: flex;
+    display: block !important;
     flex-direction: column;
     justify-content: space-between;
     height: 80vh;
@@ -198,53 +198,3 @@ h1 {
     50% { opacity: 0.3; }
     100% { opacity: 0.8; }
 }
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        width: 90%;
-        padding: 15px;
-        height: auto;
-    }
-
-    .grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 5px;
-        padding: 10px;
-    }
-
-    .tile {
-        width: 50px; /* Reduce tile size */
-        height: 50px;
-        font-size: 18px;
-    }
-
-    .controls {
-        right: 10px; 
-        top: auto;
-        bottom: 20px;
-        transform: none; 
-        display: flex;
-        flex-direction: row; 
-        gap: 5px;
-    }
-
-    .arrow {
-        font-size: 18px;
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    .arrow-group {
-        flex-direction: row;
-        gap: 5px;
-    }
-
-    .star {
-        width: 3px;
-        height: 3px;
-    }
-}
-
