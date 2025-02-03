@@ -6,10 +6,10 @@ body {
     background: linear-gradient(to right, #c167ff, #f7c6c4);
     font-family: 'Poppins', sans-serif;
     color: #fff;
-    overflow: hidden;
+     overflow: auto;
     position: relative;
-    margin: 0;
 }
+
 
 .container {
     text-align: center;
@@ -17,11 +17,11 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    display: flex;
+    display: block !important;
     flex-direction: column;
     justify-content: space-between;
     height: 80vh;
-    width: 90%;
+    width: 100%;
     max-width: 400px;
     position: relative;
     z-index: 2;
@@ -57,6 +57,7 @@ h1 {
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
+
 .tile-merge {
     animation: mergeTile 0.2s ease;
 }
@@ -67,7 +68,7 @@ h1 {
     100% { transform: scale(1); }
 }
 
-#startBtn, #retryBtn {
+#startBtn {
     background-color: #d63384;
     color: white;
     border: none;
@@ -79,8 +80,24 @@ h1 {
     margin-top: 20px;
 }
 
-#startBtn:hover, #retryBtn:hover {
+#startBtn:hover {
     background-color: #bb2376;
+}
+
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #e3d0ff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.8; }
 }
 
 #retryBtn {
@@ -125,13 +142,12 @@ h1 {
     cursor: pointer;
     color: #d63384;
 }
-
 .controls {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    right: 20px;
+    right: 20px; 
     top: 50%;
     transform: translateY(-50%);
     gap: 10px;
@@ -139,13 +155,19 @@ h1 {
 
 .arrow-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
-    justify-content: center;
 }
 
-.arrow {
-    background-color: #ff66b2;
+.arrow-group {
+    display: flex;
+    flex-direction: row; 
+    gap: 10px; 
+    justify-content: center; 
+}
+
+.arrow{
+    background-color: #ff66b2; 
     border: none;
     font-size: 24px;
     padding: 15px;
@@ -153,18 +175,18 @@ h1 {
     border-radius: 8px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     transition: background 0.2s;
-    color: white;
+    color: white; 
 }
 
 .arrow:hover {
-    background-color: #d63384;
+    background-color:#d63384; 
 }
 
 .star {
     position: absolute;
     width: 5px;
     height: 5px;
-    background: #e3d0ff;
+    background: #e3d0ff; 
     border-radius: 50%;
     opacity: 0.8;
     animation: twinkle 3s infinite;
@@ -176,4 +198,3 @@ h1 {
     50% { opacity: 0.3; }
     100% { opacity: 0.8; }
 }
-
