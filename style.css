@@ -103,6 +103,18 @@ h1 {
 #retryBtn {
     display: none;
     background-color: #ff66b2;
+    color: white;
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -90%);
 }
 
 .message {
