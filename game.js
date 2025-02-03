@@ -4,9 +4,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const retryBtn = document.getElementById("retryBtn");
     const winMessage = document.getElementById("winMessage");
     const loseMessage = document.getElementById("loseMessage");
-    
+    const pauseBtn = document.getElementById("pauseBtn");
+    const timerDisplay = document.getElementById("timer");
+    const moveSound = new Audio("switch-150130.mp3");
+
     let score = 0;
     let board = Array(4).fill().map(() => Array(4).fill(0));
+    let gamePaused = false;
+    let startTime = null;
+    let timerInterval;
+
+    function playSound() {
+        moveSound.currentTime = 0;
+        moveSound.play().catch(error => console.log("Erreur audio:", error));
+    }
+
+    function startTimer() {
+        if (!startTime) {
+            startTime = Date.now();
+            timerInterval = setInterval(() => {
+                const elapsedTime = Date.now() - startTime;
+                const minutes = Math.floor(elapsedTime / 60000);
+                const seconds = Math.floor((elapsedTime % 60000) / 1000);
+                timerDisplay.innerText = `${pad(minutes)}:${pad(seconds)}`;
+            }, 1000);
+        }
+    }
+
+    function pad(num) {
+        return num < 10 ? '0' + num : num;
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+    }
 
     function createBoard() {
         grid.innerHTML = "";
@@ -44,8 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function slide(row) {
+        let oldRow = [...row];
         let newRow = row.filter(v => v);
         while (newRow.length < 4) newRow.push(0);
+
+        if (JSON.stringify(oldRow) !== JSON.stringify(newRow)) {
+            playSound();
+        }
         return newRow;
     }
 
@@ -55,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 row[i] *= 2;
                 row[i + 1] = 0;
                 score += row[i];
+                playSound();
             }
         }
         return slide(row);
@@ -62,10 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function moveLeft() {
         board = board.map(row => combine(slide(row)));
+        addRandomTile();
+        createBoard();
     }
 
     function moveRight() {
         board = board.map(row => combine(slide(row.reverse())).reverse());
+        addRandomTile();
+        createBoard();
     }
 
     function moveUp() {
@@ -94,6 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
             loseMessage.style.display = "block";
+            retryBtn.style.display = "block";
+            stopTimer();
         }
     }
 
@@ -103,19 +146,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function togglePause() {
+        gamePaused = !gamePaused;
+        if (gamePaused) {
+            pauseBtn.innerText = "▶️";
+            stopTimer();
+        } else {
+            pauseBtn.innerText = "⏸";
+            startTimer();
+        }
+    }
+
     document.addEventListener("keydown", (event) => {
+        if (gamePaused) return;
+
         switch (event.key) {
             case "ArrowLeft": moveLeft(); break;
             case "ArrowRight": moveRight(); break;
             case "ArrowUp": moveUp(); break;
             case "ArrowDown": moveDown(); break;
         }
-        addRandomTile();
         createBoard();
         scoreDisplay.innerText = score;
         checkWin();
         checkGameOver();
     });
+
+    pauseBtn.addEventListener("click", togglePause);
 
     retryBtn.addEventListener("click", () => {
         board = Array(4).fill().map(() => Array(4).fill(0));
@@ -123,12 +180,60 @@ document.addEventListener("DOMContentLoaded", () => {
         scoreDisplay.innerText = score;
         winMessage.style.display = "none";
         loseMessage.style.display = "none";
+        retryBtn.style.display = "none";
+        startTime = null;
+        timerDisplay.innerText = "00:00";
         addRandomTile();
         addRandomTile();
         createBoard();
+        startTimer();
     });
 
+    
+    document.querySelector(".up").addEventListener("click", () => {
+        moveUp();
+        updateGame();
+    });
+
+    document.querySelector(".down").addEventListener("click", () => {
+        moveDown();
+        updateGame();
+    });
+
+    document.querySelector(".left").addEventListener("click", () => {
+        moveLeft();
+        updateGame();
+    });
+
+    document.querySelector(".right").addEventListener("click", () => {
+        moveRight();
+        updateGame();
+    });
+
+    
     addRandomTile();
     addRandomTile();
     createBoard();
+    startTimer();
+
+    function updateGame() {
+        createBoard();
+        scoreDisplay.innerText = score;
+        checkWin();
+        checkGameOver();
+    }
 });
+
+function createStars() {
+    const starCount = 50; 
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        
+        star.style.left = `${Math.random() * 100}vw`; 
+        star.style.top = `${Math.random() * 100}vh`; 
+        star.style.animationDelay = `${Math.random() * 3}s`; 
+        document.body.appendChild(star);
+    }
+}
+createStars();
