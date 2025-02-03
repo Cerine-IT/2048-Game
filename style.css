@@ -204,7 +204,7 @@ h1 {
         height: auto;
         padding: 15px;
     }
-    
+
     .grid {
         gap: 5px;
         padding: 10px;
@@ -217,7 +217,21 @@ h1 {
     }
 
     .controls {
-        right: 10px;
-        bottom: 20px;
+        position: static;
+        transform: none;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-}   
+
+    .arrow-group {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .arrow {
+        padding: 10px;
+        font-size: 20px;
+    }
+}
