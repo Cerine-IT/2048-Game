@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="controls">
+        <button class="arrow up">⬆</button>
+        <div class="arrow-group">
+            <button class="arrow left">⬅</button>
+            <button class="arrow down">⬇</button>
+            <button class="arrow right">➡</button>
+        </div>
+    </div>
+    
     <div class="container">
         <h1>2048 Game</h1>
         <div class="game-header">
@@ -20,5 +29,9 @@
     <div id="winMessage" class="message">🎉 Congrats!! 🎉</div>
     <div id="loseMessage" class="message">💔 You lost! 💔</div>
 
+    <audio id="moveSound">
+        <source src="switch-150130.mp3" type="audio/mpeg">
+    </audio>    
     <script src="game.js"></script>
 </body>
+</html>
