@@ -6,7 +6,7 @@ body {
     background: linear-gradient(to right, #c167ff, #f7c6c4);
     font-family: 'Poppins', sans-serif;
     color: #fff;
-    overflow: hidden;
+     overflow: auto;
     position: relative;
 }
 
@@ -198,3 +198,24 @@ h1 {
     50% { opacity: 0.3; }
     100% { opacity: 0.8; }
 }
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; 
+    }
+
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .arrow-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .star {
+        width: 4px;
+        height: 4px;
+    }
+}
+
