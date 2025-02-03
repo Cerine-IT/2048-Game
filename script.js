@@ -3,6 +3,8 @@ window.onload = function() {
   var grid = document.getElementById("grid");
 
   
+  var startSound = new Audio("game-start-6104.mp3");
+
   function createStars() {
     for (var i = 0; i < 50; i++) {
       var star = document.createElement("div");
@@ -15,7 +17,6 @@ window.onload = function() {
     }
   }
 
- 
   function createGrid() {
     grid.innerHTML = "";
     for (var i = 0; i < 16; i++) {
@@ -26,12 +27,15 @@ window.onload = function() {
     }
   }
 
-  
   startBtn.onclick = function() {
-    window.location.href = "game.html";
-  }
+      startSound.play();  
 
+      
+      setTimeout(function() {
+          window.location.href = "game.html";
+      }, 1000); 
+  }
 
   createStars();
   createGrid();
-}
+};
