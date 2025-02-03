@@ -177,25 +177,3 @@ h1 {
     100% { opacity: 0.8; }
 }
 
-@media (max-width: 768px) {
-    .container {
-        height: 90vh;
-        width: 95%;
-    }
-    .grid {
-        gap: 5px;
-        padding: 10px;
-    }
-    .tile {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-    .controls {
-        right: 10px;
-        top: auto;
-        bottom: 20px;
-        transform: none;
-        flex-direction: row;
-    }
-}
