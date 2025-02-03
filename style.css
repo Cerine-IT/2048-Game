@@ -57,7 +57,6 @@ h1 {
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-
 .tile-merge {
     animation: mergeTile 0.2s ease;
 }
@@ -117,6 +116,10 @@ h1 {
     transform: translate(-50%, -90%);
 }
 
+#retryBtn:hover {
+    background-color: #bb2376;
+}
+
 .message {
     position: fixed;
     top: 50%;
@@ -154,6 +157,7 @@ h1 {
     cursor: pointer;
     color: #d63384;
 }
+
 .controls {
     display: flex;
     flex-direction: column;
@@ -210,6 +214,7 @@ h1 {
     50% { opacity: 0.3; }
     100% { opacity: 0.8; }
 }
+
 @media (max-width: 600px) {
     .container {
         width: 90%;
@@ -234,6 +239,7 @@ h1 {
     }
 
 }
+
 @media (max-width: 600px) {
     .container {
         width: 90%;
