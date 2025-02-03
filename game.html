@@ -6,6 +6,7 @@
     <title>2048 Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="controls">
         <button class="arrow up">⬆</button>
@@ -17,6 +18,7 @@
     </div>
     
     <div class="container">
+
         <h1>2048 Game</h1>
         <div class="game-header">
             <div class="score">Score: <span id="score">0</span></div>
@@ -25,13 +27,17 @@
         </div>
         <div class="grid" id="grid"></div>
         <button id="retryBtn">Retry</button>
+        <button id="homeBtn">🏠 Home</button>
+
     </div>
+
     <div id="winMessage" class="message">🎉 Congrats!! 🎉</div>
     <div id="loseMessage" class="message">💔 You lost! 💔</div>
 
     <audio id="moveSound">
         <source src="switch-150130.mp3" type="audio/mpeg">
-    </audio>    
+    </audio>
+
     <script src="game.js"></script>
 </body>
 </html>
