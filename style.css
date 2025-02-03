@@ -200,22 +200,51 @@ h1 {
 }
 @media (max-width: 768px) {
     body {
-        font-size: 14px; 
+        font-size: 14px;
     }
 
     .container {
         width: 90%;
         padding: 15px;
+        height: auto;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .tile {
+        width: 50px; /* Reduce tile size */
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .controls {
+        right: 10px; 
+        top: auto;
+        bottom: 20px;
+        transform: none; 
+        display: flex;
+        flex-direction: row; 
+        gap: 5px;
+    }
+
+    .arrow {
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px;
     }
 
     .arrow-group {
-        flex-direction: column;
+        flex-direction: row;
         gap: 5px;
     }
 
     .star {
-        width: 4px;
-        height: 4px;
+        width: 3px;
+        height: 3px;
     }
 }
 
