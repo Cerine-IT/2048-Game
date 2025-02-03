@@ -245,3 +245,19 @@ h1 {
         font-size: 20px;
     }
 }
+@media (max-width: 720px) {
+    .tile {
+        width: 18vw; /* Smaller tiles for smaller screens */
+        height: 18vw;
+        font-size: 4.5vw;
+    }
+
+    .controls {
+        margin-top: 10px; /* Reduce margin for smaller screens */
+    }
+
+    .arrow {
+        padding: 8px; /* Smaller padding for buttons */
+        font-size: 18px;
+    }
+}
