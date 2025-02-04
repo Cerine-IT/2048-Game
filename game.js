@@ -251,3 +251,89 @@ createStars();
     document.getElementById("homeBtn").addEventListener("click", ()=> {
         window.location.href = "index.html";
     });
+let touchStartX = 0, touchStartY = 0;
+let touchEndX = 0, touchEndY = 0;
+
+
+document.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+});
+
+
+document.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+    touchEndY = event.changedTouches[0].clientY;
+    handleSwipe(); 
+});
+function handleSwipe() {
+  
+    let dx = touchEndX - touchStartX;
+    let dy = touchEndY - touchStartY;
+
+  
+    if (Math.abs(dx) > Math.abs(dy)) { 
+        if (dx > 0) {
+            moveRight(); 
+        } else {
+            moveLeft(); 
+        }
+    } else { 
+        if (dy > 0) {
+            moveDown(); 
+        } else {
+            moveUp(); 
+        }
+    }
+
+
+    updateGame();
+}
+function updateGame() {
+    createBoard(); 
+    scoreDisplay.innerText = score; 
+    checkWin(); 
+    checkGameOver(); 
+}
+let touchStartX = 0, touchStartY = 0;
+let touchEndX = 0, touchEndY = 0;
+
+// Détecter le début du geste
+document.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+});
+
+// Détecter la fin du geste
+document.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+    touchEndY = event.changedTouches[0].clientY;
+    handleSwipe(); // Appeler la fonction pour gérer le geste
+});
+
+function handleSwipe() {
+    
+    let dx = touchEndX - touchStartX;
+    let dy = touchEndY - touchStartY;
+
+   
+    if (Math.abs(dx) > Math.abs(dy)) { // Mouvement horizontal
+        if (dx > 0) {
+            moveRight(); 
+        } else {
+            moveLeft();
+        }
+    } else { 
+        if (dy > 0) {
+            moveDown();
+        } else {
+            moveUp(); 
+        }
+    }
+
+    updateGame();
+}
+const SWIPE_THRESHOLD = 50; 
+if (Math.abs(dx) > SWIPE_THRESHOLD || Math.abs(dy) > SWIPE_THRESHOLD) {
+    
+}
