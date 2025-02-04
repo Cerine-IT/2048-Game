@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
     function checkWin() {
-        if (board.flat().includes(2048)) {
+        if (board.flat().includes(128)) {
             winMessage.style.display = "block";
         }
     }
