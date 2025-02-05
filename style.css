@@ -6,7 +6,7 @@ body {
     background: linear-gradient(to right, #c167ff, #f7c6c4);
     font-family: 'Poppins', sans-serif;
     color: #fff;
-    overflow: auto;
+    overflow: hidden; /*auto*/
     position: relative;
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    display: block !important;
+    display: flex; /*block !important*/
     flex-direction: column;
     justify-content: space-between;
     height: 80vh;
@@ -240,8 +240,8 @@ h1 {
 
     .container {
         width: 90%;
-        height: auto;
-        padding: 0px;
+        height: 90%;
+        padding: 15px;
     }
     
     .grid {
