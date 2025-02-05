@@ -237,8 +237,8 @@ h1 {
 @media (max-width: 768px) {
 
     .container {
-        width: 90%;
-        height: auto;
+        width: 80%;
+        height: 90%;
         padding: 15px;
     }
     
@@ -264,6 +264,10 @@ h1 {
         font-size: 24px;
         width: 80%;
         padding: 15px;
+    }
+
+    .arrow {
+        font-size: 20px;
     }
 
 }
