@@ -237,8 +237,8 @@ h1 {
 @media (max-width: 768px) {
 
     .container {
-        width: 80%;
-        height: 90%;
+        width: 70%;
+        height: auto;
         padding: 15px;
     }
     
