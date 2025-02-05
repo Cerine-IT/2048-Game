@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let diffY = touchEndY - touchstartY;
 
         if(Math.abs(diffX)> Math.abs(diffY)) {
-            if(diffX >30) moveRight();
-            else if(diffX > -30) moveLeft();
+            if(diffX >15) moveRight();
+            else if(diffX > -15) moveLeft();
         } else {
-            if(diffY>30) moveDown();
-            else if(diffX>-30) moveUp();
+            if(diffY>15) moveDown();
+            else if(diffX>-15) moveUp();
         }
         
         createBoard();
