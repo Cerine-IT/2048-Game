@@ -15,6 +15,40 @@ document.addEventListener("DOMContentLoaded", () => {
     let startTime = null;
     let timerInterval;
 
+    let touchStartX =0;
+    let touchStartY =0;
+    let touchEndX=0;
+    let touchEndY=0;
+
+    document.addEventListener("touchstart", (event)=>{
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+    });
+
+    document.addEventListener("touched", (event)=> {
+        touchEndX = event.changedTouches[0].clientX;
+        touchEndY = event.changedTouches[0].clientY;
+        handleSwipe(); 
+    });
+
+    function handleSwipe(){
+        let diffX = touchEndX - touchStartX ;
+        let diffY = touchEndY - touchstartY;
+
+        if(Math.abs(diffX)> Math.abs(diffY)) {
+            if(diffX >30) moveRight();
+            else if(diffX > -30) moveLeft();
+        } else {
+            if(diffY>30) moveDown();
+            else if(diffX>-30) moveUp();
+        }
+        
+        createBoard();
+        scoreDisplay.innerText = score;
+        checkWin();
+        checkGameOver();
+    }
+
     function playSound() {
         moveSound.currentTime = 0;
         moveSound.play().catch(error => console.log("Erreur audio:", error));
@@ -266,6 +300,7 @@ document.addEventListener("touchend", (event) => {
     touchEndY = event.changedTouches[0].clientY;
     handleSwipe(); 
 });
+
 function handleSwipe() {
   
     let dx = touchEndX - touchStartX;
@@ -285,7 +320,6 @@ function handleSwipe() {
             moveUp(); 
         }
     }
-
 
     updateGame();
 }
