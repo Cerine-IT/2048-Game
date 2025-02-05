@@ -301,12 +301,26 @@ document.addEventListener("touchend", (event) => {
     handleSwipe(); 
 });
 
+let touchstartX = 0, touchstartY = 0;
+let touchendX = 0, touchsndY = 0;
+
+
+document.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+});
+
+
+document.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+    touchEndY = event.changedTouches[0].clientY;
+    handleSwipe(); 
+});
+
+
 function handleSwipe() {
-  
     let dx = touchEndX - touchStartX;
     let dy = touchEndY - touchStartY;
-
-  
     if (Math.abs(dx) > Math.abs(dy)) { 
         if (dx > 0) {
             moveRight(); 
@@ -321,11 +335,33 @@ function handleSwipe() {
         }
     }
 
-    updateGame();
+    updateGame(); 
 }
+
+
 function updateGame() {
     createBoard(); 
     scoreDisplay.innerText = score; 
     checkWin(); 
     checkGameOver(); 
 }
+
+document.querySelector(".up").addEventListener("click", () => {
+    moveUp();
+    updateGame();
+});
+
+document.querySelector(".down").addEventListener("click", () => {
+    moveDown();
+    updateGame();
+});
+
+document.querySelector(".left").addEventListener("click", () => {
+    moveLeft();
+    updateGame();
+});
+
+document.querySelector(".right").addEventListener("click", () => {
+    moveRight();
+    updateGame();
+});
