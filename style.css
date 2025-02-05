@@ -237,9 +237,9 @@ h1 {
 @media (max-width: 768px) {
 
     .container {
-        width: 70%;
+        width: auto;
         height: auto;
-        padding: 15px;
+        padding: 0px;
     }
     
     .grid {
