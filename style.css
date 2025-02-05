@@ -8,6 +8,8 @@ body {
     color: #fff;
     overflow: auto;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -237,7 +239,7 @@ h1 {
 @media (max-width: 768px) {
 
     .container {
-        width: auto;
+        width: 90%;
         height: auto;
         padding: 0px;
     }
@@ -255,7 +257,7 @@ h1 {
 
     .controls {
         position: fixed;
-        bottom: 20px;
+        bottom: 5%;
         left: 50%;
         transform: translateX(-50%);
     }
