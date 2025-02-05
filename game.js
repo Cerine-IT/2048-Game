@@ -306,21 +306,21 @@ let touchendX = 0, touchsndY = 0;
 
 
 document.addEventListener("touchstart", (event) => {
-    touchStartX = event.touches[0].clientX;
-    touchStartY = event.touches[0].clientY;
+    touchstartX = event.touches[0].clientX;
+    touchstartY = event.touches[0].clientY;
 });
 
 
 document.addEventListener("touchend", (event) => {
-    touchEndX = event.changedTouches[0].clientX;
-    touchEndY = event.changedTouches[0].clientY;
+    touchendX = event.changedTouches[0].clientX;
+    touchendY = event.changedTouches[0].clientY;
     handleSwipe(); 
 });
 
 
 function handleSwipe() {
-    let dx = touchEndX - touchStartX;
-    let dy = touchEndY - touchStartY;
+    let dx = touchendX - touchstartX;
+    let dy = touchendY - touchstartY;
     if (Math.abs(dx) > Math.abs(dy)) { 
         if (dx > 0) {
             moveRight(); 
