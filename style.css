@@ -245,7 +245,7 @@ h1 {
 
     .container {
         width: 90%;
-        height: 80%;
+        height: 55%;
         padding: 0px;
     }
     
@@ -288,10 +288,13 @@ h1 {
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 60px;
+    /*margin-top: 60px;*/
     display: block;
     width: fit-content;
-    margin-left: auto;
+    /*margin-left: auto;*/
+    position: absolute;
+    bottom: 5vh;
+    right: 2vw;
 }
 
 #homeBtn:hover {
