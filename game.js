@@ -25,7 +25,7 @@
         touchStartY = event.touches[0].clientY;
     });
 
-    document.addEventListener("touched", (event)=> {
+    document.addEventListener("touchend", (event)=> {
         touchEndX = event.changedTouches[0].clientX;
         touchEndY = event.changedTouches[0].clientY;
         handleSwipe(); 
@@ -33,14 +33,14 @@
 
     function handleSwipe(){
         let diffX = touchEndX - touchStartX ;
-        let diffY = touchEndY - touchstartY;
+        let diffY = touchEndY - touchStartY;
 
         if(Math.abs(diffX)> Math.abs(diffY)) {
-            if(diffX >15) moveRight();
-            else if(diffX > -15) moveLeft();
+            if(diffX >30) moveRight();
+            else if(diffX < -30) moveLeft();
         } else {
-            if(diffY>15) moveDown();
-            else if(diffX>-15) moveUp();
+            if(diffY>30) moveDown();
+            else if(diffX<-30) moveUp();
         }
         
         createBoard();
@@ -48,6 +48,7 @@
         checkWin();
         checkGameOver();
     }
+
 
     function playSound() {
         moveSound.currentTime = 0;
