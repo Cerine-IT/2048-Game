@@ -40,7 +40,7 @@
             else if(diffX < -30) moveLeft();
         } else {
             if(diffY>30) moveDown();
-            else if(diffX <-30) moveUp();
+            else if(diffY <-30) moveUp();
         }
         
         createBoard();
