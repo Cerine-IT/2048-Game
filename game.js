@@ -15,34 +15,34 @@ document.addEventListener("DOMContentLoaded", () => {
     let startTime = null;
     let timerInterval;
 
-    let touchStartX =0;
-    let touchStartY =0;
-    let touchEndX=0;
-    let touchEndY=0;
+   let touchStartX = 0, touchStartY = 0;
+   let touchEndX = 0, touchEndY = 0;
 
-    document.addEventListener("touchstart", (event)=>{
-        touchStartX = event.touches[0].clientX;
-        touchStartY = event.touches[0].clientY;
-    });
+document.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+});
 
-    document.addEventListener("touched", (event)=> {
-        touchEndX = event.changedTouches[0].clientX;
-        touchEndY = event.changedTouches[0].clientY;
-        handleSwipe(); 
-    });
+document.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+    touchEndY = event.changedTouches[0].clientY;
+    handleSwipe(); 
+});
 
-    function handleSwipe(){
-        let diffX = touchEndX - touchStartX ;
-        let diffY = touchEndY - touchstartY;
 
-        if(Math.abs(diffX)> Math.abs(diffY)) {
-            if(diffX >15) moveRight();
-            else if(diffX > -15) moveLeft();
-        } else {
-            if(diffY>15) moveDown();
-            else if(diffX>-15) moveUp();
-        }
-        
+   function handleSwipe() {
+    let dx = touchEndX - touchStartX;
+    let dy = touchEndY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy)) { 
+        if (dx > 0) moveRight();
+        else moveLeft();
+    } else { 
+        if (dy > 0) moveDown();
+        else moveUp();
+    }
+    updateGame(); 
+}
+
         createBoard();
         scoreDisplay.innerText = score;
         checkWin();
