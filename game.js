@@ -367,9 +367,9 @@ document.querySelector(".right").addEventListener("click", () => {
     updateGame();
 });
 function checkWin() {
-    if (board.flat().includes(128)) { // Change 128 to 2048 if needed
+    if (board.flat().includes(128)) { 
         winMessage.style.display = "block";
-        lottieAnimation.style.display = "block"; // Show the Lottie animation
+        lottieAnimation.style.display = "block"; 
     }
 }
 retryBtn.addEventListener("click", () => {
@@ -378,7 +378,7 @@ retryBtn.addEventListener("click", () => {
     scoreDisplay.innerText = score;
     winMessage.style.display = "none";
     loseMessage.style.display = "none";
-    lottieAnimation.style.display = "none"; // Hide the Lottie animation
+    lottieAnimation.style.display = "none"; 
     retryBtn.style.display = "none";
     startTime = null;
     timerDisplay.innerText = "00:00";
