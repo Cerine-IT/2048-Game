@@ -189,7 +189,7 @@ h1 {
     align-items: center;
     position: absolute;
     right: 20px; 
-    top: 50%;
+    top: 85%;
     transform: translateY(-50%);
     gap: 10px;
 }
