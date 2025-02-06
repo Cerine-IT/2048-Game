@@ -372,7 +372,7 @@ document.querySelector(".right").addEventListener("click", () => {
     updateGame();
 });
 function checkWin() {
-    if (board.flat().includes(128)) { 
+    if (board.flat().includes(2048)) { 
         winMessage.style.display = "block";
         lottieAnimation.style.display = "block"; 
     }
