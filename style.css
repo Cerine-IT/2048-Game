@@ -6,7 +6,7 @@ body {
     background: linear-gradient(to right, #c167ff, #f7c6c4);
     font-family: 'Poppins', sans-serif;
     color: #fff;
-    overflow: auto;
+    overflow: hidden;
     position: relative;
 }
 
