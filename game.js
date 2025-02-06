@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById("grid");
     const scoreDisplay = document.getElementById("score");
     const retryBtn = document.getElementById("retryBtn");
