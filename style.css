@@ -8,6 +8,8 @@ body {
     color: #fff;
     overflow: hidden;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -21,11 +23,11 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 80vh;
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     position: relative;
     z-index: 2;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 h1 {
@@ -45,8 +47,10 @@ h1 {
 }
 
 .tile {
-    width: 70px;
-    height: 70px;
+    width: 15vw;
+    height: 15vw;
+    max-width: 70px;
+    max-height: 70px;
     background: white;
     color: #d63384;
     display: flex;
@@ -238,7 +242,7 @@ h1 {
 @media (max-width: 768px) {
 
     .container {
-        width: auto;
+        width: 90%;
         height: auto;
         padding: 0px;
     }
@@ -249,8 +253,8 @@ h1 {
     }
 
     .tile {
-        width: 50px;
-        height: 50px;
+        width: 20vw;
+        height: 20vw;
         font-size: 18px;
     }
 
@@ -269,42 +273,7 @@ h1 {
 
     .arrow {
         font-size: 20px;
-    }
-
-}@media (max-width: 768px) {
-
-    .container {
-        width: auto;
-        height: auto;
-        padding: 0px;
-    }
-    
-    .grid {
-        gap: 5px;
         padding: 10px;
-    }
-
-    .tile {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-
-    .controls {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .message {
-        font-size: 24px;
-        width: 80%;
-        padding: 15px;
-    }
-
-    .arrow {
-        font-size: 20px;
     }
 
 }
