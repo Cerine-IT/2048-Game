@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     background: linear-gradient(to right, #c167ff, #f7c6c4);
     font-family: 'Poppins', sans-serif;
     color: #fff;
