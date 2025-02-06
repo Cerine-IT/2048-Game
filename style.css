@@ -93,6 +93,7 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #startBtn:hover {
@@ -244,7 +245,7 @@ h1 {
 
     .container {
         width: 90%;
-        height: auto;
+        height: 80%;
         padding: 0px;
     }
     
