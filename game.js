@@ -1,4 +1,4 @@
-    document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById("grid");
     const scoreDisplay = document.getElementById("score");
     const retryBtn = document.getElementById("retryBtn");
@@ -15,34 +15,34 @@
     let startTime = null;
     let timerInterval;
 
-   let touchStartX = 0, touchStartY = 0;
-   let touchEndX = 0, touchEndY = 0;
+    let touchStartX =0;
+    let touchStartY =0;
+    let touchEndX=0;
+    let touchEndY=0;
 
-document.addEventListener("touchstart", (event) => {
-    touchStartX = event.touches[0].clientX;
-    touchStartY = event.touches[0].clientY;
-});
+    document.addEventListener("touchstart", (event)=>{
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+    });
 
-document.addEventListener("touchend", (event) => {
-    touchEndX = event.changedTouches[0].clientX;
-    touchEndY = event.changedTouches[0].clientY;
-    handleSwipe(); 
-});
+    document.addEventListener("touched", (event)=> {
+        touchEndX = event.changedTouches[0].clientX;
+        touchEndY = event.changedTouches[0].clientY;
+        handleSwipe(); 
+    });
 
+    function handleSwipe(){
+        let diffX = touchEndX - touchStartX ;
+        let diffY = touchEndY - touchstartY;
 
-   function handleSwipe() {
-    let dx = touchEndX - touchStartX;
-    let dy = touchEndY - touchStartY;
-    if (Math.abs(dx) > Math.abs(dy)) { 
-        if (dx > 0) moveRight();
-        else moveLeft();
-    } else { 
-        if (dy > 0) moveDown();
-        else moveUp();
-    }
-    updateGame(); 
-}
-
+        if(Math.abs(diffX)> Math.abs(diffY)) {
+            if(diffX >15) moveRight();
+            else if(diffX > -15) moveLeft();
+        } else {
+            if(diffY>15) moveDown();
+            else if(diffX>-15) moveUp();
+        }
+        
         createBoard();
         scoreDisplay.innerText = score;
         checkWin();
@@ -364,4 +364,28 @@ document.querySelector(".left").addEventListener("click", () => {
 document.querySelector(".right").addEventListener("click", () => {
     moveRight();
     updateGame();
+});
+function checkWin() {
+    if (board.flat().includes(128)) { // Change 128 to 2048 if needed
+        winMessage.style.display = "block";
+        lottieAnimation.style.display = "block"; // Show the Lottie animation
+    }
+}
+retryBtn.addEventListener("click", () => {
+    board = Array(4).fill().map(() => Array(4).fill(0));
+    score = 0;
+    scoreDisplay.innerText = score;
+    winMessage.style.display = "none";
+    loseMessage.style.display = "none";
+    lottieAnimation.style.display = "none"; // Hide the Lottie animation
+    retryBtn.style.display = "none";
+    startTime = null;
+    timerDisplay.innerText = "00:00";
+    gamePaused = false;
+    pauseBtn.innerText = "⏸";
+
+    addRandomTile();
+    addRandomTile();
+    createBoard();
+    startTimer();
 });
