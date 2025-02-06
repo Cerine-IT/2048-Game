@@ -40,7 +40,7 @@
             else if(diffX < -30) moveLeft();
         } else {
             if(diffY>30) moveDown();
-            else if(diffX<-30) moveUp();
+            else if(diffX <-30) moveUp();
         }
         
         createBoard();
@@ -183,7 +183,7 @@
 }
 
     function checkWin() {
-        if (board.flat().includes(128)) {
+        if (board.flat().includes(2048)) {
             winMessage.style.display = "block";
         }
     }
