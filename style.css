@@ -22,8 +22,8 @@ body {
     display: block !important;
     flex-direction: column;
     justify-content: space-between;
-    height: 80vh;
-    width: 90%;
+    height: 70vh;
+    width: 80%;
     max-width: 400px;
     position: relative;
     z-index: 2;
