@@ -183,8 +183,12 @@
 }
 
     function checkWin() {
-        if (board.flat().includes(2048)) {
+        if (board.flat().includes(32)) {
             winMessage.style.display = "block";
+          
+        setTimeout(() => {
+                winMessage.style.display = "none";
+            }, 10000);
         }
     }
 
@@ -286,6 +290,8 @@ createStars();
     document.getElementById("homeBtn").addEventListener("click", ()=> {
         window.location.href = "index.html";
     });
+
+/*
 let touchStartX = 0, touchStartY = 0;
 let touchEndX = 0, touchEndY = 0;
 
@@ -335,9 +341,8 @@ function handleSwipe() {
             moveUp(); 
         }
     }
-
     updateGame(); 
-}
+} */
 
 
 function updateGame() {
