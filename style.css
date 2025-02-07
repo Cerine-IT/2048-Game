@@ -263,7 +263,7 @@ h1 {
     .controls {
         position: fixed;
         bottom: 20px;
-        left: 200%;
+        left: 1000%;
         transform: translateX(-50%);
     }
 
