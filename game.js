@@ -183,7 +183,7 @@
 }
 
     function checkWin() {
-        if (board.flat().includes(32)) {
+        if (board.flat().includes(2048)) {
             winMessage.style.display = "block";
           
         setTimeout(() => {
@@ -291,60 +291,6 @@ createStars();
         window.location.href = "index.html";
     });
 
-/*
-let touchStartX = 0, touchStartY = 0;
-let touchEndX = 0, touchEndY = 0;
-
-
-document.addEventListener("touchstart", (event) => {
-    touchStartX = event.touches[0].clientX;
-    touchStartY = event.touches[0].clientY;
-});
-
-
-document.addEventListener("touchend", (event) => {
-    touchEndX = event.changedTouches[0].clientX;
-    touchEndY = event.changedTouches[0].clientY;
-    handleSwipe(); 
-});
-
-let touchstartX = 0, touchstartY = 0;
-let touchendX = 0, touchsndY = 0;
-
-
-document.addEventListener("touchstart", (event) => {
-    touchstartX = event.touches[0].clientX;
-    touchstartY = event.touches[0].clientY;
-});
-
-
-document.addEventListener("touchend", (event) => {
-    touchendX = event.changedTouches[0].clientX;
-    touchendY = event.changedTouches[0].clientY;
-    handleSwipe(); 
-});
-
-
-function handleSwipe() {
-    let dx = touchendX - touchstartX;
-    let dy = touchendY - touchstartY;
-    if (Math.abs(dx) > Math.abs(dy)) { 
-        if (dx > 0) {
-            moveRight(); 
-        } else {
-            moveLeft(); 
-        }
-    } else { 
-        if (dy > 0) {
-            moveDown(); 
-        } else {
-            moveUp(); 
-        }
-    }
-    updateGame(); 
-} */
-
-
 function updateGame() {
     createBoard(); 
     scoreDisplay.innerText = score; 
@@ -371,12 +317,8 @@ document.querySelector(".right").addEventListener("click", () => {
     moveRight();
     updateGame();
 });
-function checkWin() {
-    if (board.flat().includes(2048)) { 
-        winMessage.style.display = "block";
-        lottieAnimation.style.display = "block"; 
-    }
-}
+
+
 retryBtn.addEventListener("click", () => {
     board = Array(4).fill().map(() => Array(4).fill(0));
     score = 0;
