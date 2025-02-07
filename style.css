@@ -288,10 +288,8 @@ h1 {
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    /*margin-top: 60px;*/
     display: block;
     width: fit-content;
-    /*margin-left: auto;*/
     position: absolute;
     bottom: 1vh;
     right: 2vw;
