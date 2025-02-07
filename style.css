@@ -129,7 +129,7 @@ h1 {
     
     position: absolute;
     left: 50%;
-    top: 90%;
+    top: 92%;
     transform: translate(-50%, -90%);
 }
 
@@ -245,7 +245,7 @@ h1 {
 
     .container {
         width: 90%;
-        height: 55%;
+        height: 60%;
         padding: 0px;
     }
     
