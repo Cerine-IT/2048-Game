@@ -20,6 +20,7 @@ This project is an implementation of the famous 2048 game using HTML, CSS, and J
 │-- script.js       # Visual effects (stars, etc.)
 │-- game.js         # Game logic (movements, merging, scoring...)
 │-- switch-150130.mp3  # Movement sound effect
+|-- game-start-6104.mp3 # Start sound effect
 │-- README.md       # Project documentation
 ```
 
