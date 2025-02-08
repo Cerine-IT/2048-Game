@@ -4,12 +4,12 @@ This project is an implementation of the famous 2048 game using HTML, CSS, and J
 
 🚀 Features
 
-✅ Responsive interface for both mobile and desktop
-✅ Tile movement via keyboard (arrows) and touch (swipe) ✨
-✅ Score and timer display during the game ⏳
-✅ Visual effects and CSS animations for a better experience 🎨
-✅ Pause ⏸ and Retry 🔄 buttons
-✅ Victory message disappears after 10 seconds so that the user can continue playing 🎉
+✅ Responsive interface for both mobile and desktop.
+✅ Tile movement via keyboard (arrows) and touch (swipe) ✨.
+✅ Score and timer display during the game ⏳.
+✅ Visual effects and CSS animations for a better experience 🎨.
+✅ Pause ⏸ and Retry 🔄 buttons.
+✅ Victory message disappears after 10 seconds so that the user can continue playing 🎉.
 
 📂 File Structure
 ```
